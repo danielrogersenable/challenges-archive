@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Styles/calculator.css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/knockout-3.4.2.js")
+    @Scripts.Render("~/Scripts/App/Utils.js")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/Tests/CalculatorTests.js")
+    @Scripts.Render("~/Scripts/App/Calculator.js")
+    @Scripts.Render("~/Scripts/App/BaseViewModel.js")
+</head>
+<body>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿/*$primarycolor: #79B55B;*/
+$enablegreen: #79B55B;
+$primarycolor: darken($enablegreen,20%); // Acccessibility issues with contrast
+$secondarycolor: white;
+$fontcolor: black;
+$successcolor: $primarycolor;
+$failurecolor: red;
+$headingcolor: $primarycolor;
+$backgroundcolor: $secondarycolor;
+$tableprimarycolor: $backgroundcolor;
+$tablesecondarycolor: darken($tableprimarycolor, 5%);
+
+body {
+    color: $fontcolor;
+    background-color: $backgroundcolor;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 44px;
+    color: $headingcolor;
+}
+
+.calculator {
+    margin-top: 10px;
+}
+
+.calculator-text {
+    color: $fontcolor;
+    font-weight: normal;
+}
+
+.calculator-success {
+    color: $successcolor;
+}
+
+.calculator-failure {
+    color: $failurecolor;
+}
+
+input[type=button], input[type=submit], .buttonstyle {
+    text-align: center;
+    background-color: $primarycolor;
+    color: $secondarycolor;
+    border-radius: 14px;
+    margin-left: 5px;
+    min-width: 150px;
+    border: 1px solid $secondarycolor;
+
+    &:hover {
+        background-color: $secondarycolor;
+        color: $primarycolor;
+        text-decoration: none;
+        border: 1px solid $primarycolor;
+        outline-color: $primarycolor;
+    }
+}
+
+.tutorial {
+    margin: 10px 0px;
+    /*border: 1px solid $primarycolor;*/
+    transition: height 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.tutorial-content {
+    padding: 10px 10px;
+    border: 1px solid $primarycolor;
+}

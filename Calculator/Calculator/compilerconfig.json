@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Models/Styles/calculator.css",
+    "inputFile": "Models/Styles/calculator.scss"
+  },
+  {
+    "outputFile": "Styles/calculator.css",
+    "inputFile": "Styles/calculator.scss"
+  },
+  {
+    "outputFile": "Styles/StyleSheet1.css",
+    "inputFile": "Styles/StyleSheet1.scss"
+  }
+]

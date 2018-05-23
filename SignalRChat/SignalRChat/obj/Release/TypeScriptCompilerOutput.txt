@@ -1,0 +1,12 @@
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\BaseViewModel.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\BaseViewModel.js.map
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\Utils.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\Utils.js.map
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\Home\ChatRoom.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\Home\ChatRoom.js.map
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\BaseViewModel.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\BaseViewModel.js.map
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\Utils.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\App\Utils.js.map
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\Home\ChatRoom.js
+C:\Projects\Programming Challenges\SignalRChat\SignalRChat\Scripts\Home\ChatRoom.js.map

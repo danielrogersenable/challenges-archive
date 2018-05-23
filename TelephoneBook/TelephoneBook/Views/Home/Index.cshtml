@@ -1,0 +1,92 @@
+﻿@model TelephoneBook.Models.Contact
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@*Further additions to make:
+    [X] Add a search bar which syncs with the existing paging.
+    [X] Add sorting to the main table.
+    [X] Use session storage to store the most recent sorting criteria.
+    [x] Fix any accessibility issues.
+    [ ] Make the api work properly - at the moment it works locally but not at local/telephonebook since in the latter it tracks all the way back to the root.
+*@
+
+<section class="wrapper">
+
+    <h1>Telephone Book</h1>
+    <div class="buttonenvironment">
+        @Html.ActionLink("Add new contact", "Edit", new { controller = "Home" }, htmlAttributes: new { @class = "buttonstyle" })
+        <input type="button" class="buttonstyle" data-bind="click: changeDisplayMethod, value: displayMethodLabel(), enable: !isSinglePage()" />
+    </div>
+
+    <form class="searchform">
+        <label for="searchbar" class="contactslabel">Search contacts:</label>
+        <input type="search" id="searchbar" class="contactsdataentry" placeholder="Search" data-bind=" value: pagingModel().searchTerm, valueUpdate: 'afterkeydown'" />
+        <input type="submit" value="Search for specified contacts" data-bind="click: searchContacts" />
+        <input type="button" value="Clear current search" data-bind="click: clearSearch" />
+    </form>
+
+
+    <p class="navigation-buttons" data-bind="visible: !viewingAll()">
+        <input type="button" class="navbutton" value="Previous page" data-bind="click: previousPage, enable: canPageDown" />
+        Page <span data-bind="text: pagingModel().pageNumber()"></span> of <span data-bind="text: pages()"> </span>
+        <input type="button" class="navbutton" value="Next page" data-bind="click: nextPage, enable: canPageUp" />
+    </p>
+
+
+
+    <table class="contactstable">
+        <thead data-bind="contactsList">
+            <tr>
+                <th class="column-firstName" data-bind="click: sortFirstName, executeOnEnter: sortFirstName" tabindex="0">
+                    @Html.DisplayNameFor(o => o.FirstName)
+                </th>
+                <th class="column-surname" data-bind="click: sortSurname, executeOnEnter: sortSurname" tabindex="0">
+                    @Html.DisplayNameFor(o => o.Surname)
+                </th>
+                <th class="column-phoneNumber" data-bind="click: sortPhoneNumber, executeOnEnter: sortPhoneNumber" tabindex="0">
+                    @Html.DisplayNameFor(o => o.PhoneNumber)
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: contactsList">
+            <tr data-bind="click: editContact, valueUpdate: 'afterkeydown', event: {keypress: editContactEnter}" , tabindex="0">
+                <td data-bind="text: firstName"></td>
+                <td data-bind="text: surname"></td>
+                <td data-bind="text: phoneNumber"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="loader" data-bind="fadeVisible: isLoading()"></div>
+
+    <div class="push"></div>
+</section>
+
+
+@*<form class="table-navigation" data-bind="visible: !viewingAll()">
+        <label for="page-length" class="contactslabel">Contacts per page:</label>
+        <input id="page-length" type="number" data-bind="value: pagingModel().pageLength" />
+        <input class="hidden" type="submit" value="Display contacts" data-bind="click: loadSelectedContacts" />
+    </form>
+
+    <form class="table-navigation" data-bind="visible: !viewingAll()">
+        <label for="page-number" class="contactslabel">Jump to page:</label>
+        <input id="page-number" type="number" data-bind="value: pagingModel().pageNumber" />
+        <input class="hidden" type="submit" value="Display contacts" data-bind="click: loadSelectedContacts" />
+    </form>*@
+
+<footer class="sticky-footer" data-bind="visible: !viewingAll()">
+    <form class="table-navigation">
+        <label for="page-length" class="contactslabel">Contacts per page:</label>
+        <input id="page-length" type="number" data-bind="value: pagingModel().pageLength" />
+        <label for="page-number" class="contactslabel">Jump to page:</label>
+        <input id="page-number" type="number" data-bind="value: pagingModel().pageNumber" />
+    </form>
+</footer>
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/App/Home/Index.js")
+}

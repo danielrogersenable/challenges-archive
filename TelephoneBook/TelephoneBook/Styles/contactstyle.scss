@@ -1,0 +1,241 @@
+﻿$enablegreen: #79B55B;
+$enableyellow: #EEE21E;
+$primarycolor: darken($enablegreen,20%); // Acccessibility issues with contrast
+/*$primarycolor: darken(red,20%);*/
+$secondarycolor: white;
+$fontcolor: black;
+$headingcolor: $primarycolor;
+$backgroundcolor: $secondarycolor;
+$tableprimarycolor: $backgroundcolor;
+$tablesecondarycolor: darken($tableprimarycolor, 5%);
+
+:focus {
+    outline-color: $primarycolor;
+}
+
+body {
+    color: $fontcolor;
+    background-color: $backgroundcolor;
+}
+
+
+
+.topbar {
+    background-color: $primarycolor;
+    color: $secondarycolor;
+
+    :focus {
+        outline-color: $secondarycolor;
+    }
+
+    a {
+        color: $secondarycolor;
+
+        &:hover {
+            background-color: $secondarycolor;
+            color: $primarycolor;
+            outline-color: $primarycolor;
+        }
+    }
+}
+
+h1 {
+    color: $headingcolor;
+}
+
+
+.contactstable {
+    width: 100%;
+    margin-bottom: 20px;
+
+    th {
+        margin-bottom: 15px;
+        border-bottom: 1px solid black
+    }
+
+    td {
+        height: 25px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+    }
+
+
+    tr:nth-child(even) {
+        background-color: $tablesecondarycolor;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $tableprimarycolor;
+    }
+
+    tr:hover td {
+        background-color: $primarycolor;
+        color: $secondarycolor;
+    }
+}
+
+.buttonenvironment {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.contactsform {
+    > input {
+        float: left;
+        width: 250px;
+        margin: 2px;
+        border-width: 1px;
+        border-style: solid;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline-color: $primarycolor;
+        }
+    }
+
+    > div {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+.searchform {
+    padding-top: 10px;
+
+    > input {
+        width: 300px;
+        margin: 2px;
+        border-width: 1px;
+        border-style: solid;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline-color: $primarycolor;
+        }
+    }
+
+    > div {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+.contactsdataentry {
+    background-color: lighten($backgroundcolor,5%);
+    color: $fontcolor;
+
+    &::-webkit-input-placeholder {
+        color: $fontcolor;
+    }
+}
+
+
+input[type=button], input[type=submit], .buttonstyle, .navbutton {
+    text-align: center;
+    background-color: $primarycolor;
+    border: 1px solid $secondarycolor;
+    padding: 1px 6px;
+    color: $secondarycolor;
+    /*min-width: 200px;*/
+    border-radius: 14px;
+    margin-left: 5px;
+
+    &:focus, &:hover {
+        background-color: $secondarycolor;
+        color: $primarycolor;
+        text-decoration: none;
+        border: 1px solid $primarycolor;
+        outline-color: $primarycolor;
+    }
+
+    &:disabled {
+        background-color: darken($primarycolor,10%);
+        color: $secondarycolor;
+        border: 1px solid $secondarycolor;
+    }
+}
+
+.buttonstyle {
+    float: left;
+    min-width: 200px;
+}
+
+
+
+.contactslabel {
+    /*float: left;*/
+    width: 150px;
+}
+
+
+.table-navigation {
+
+    > input {
+        width: 50px;
+        margin: 2px;
+        border-width: 1px;
+        border-style: solid;
+        margin-bottom: 20px;
+
+        &:focus {
+            outline-color: $primarycolor;
+        }
+    }
+}
+
+.navigation-buttons {
+    padding-bottom: 5px;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto 50px; /* the bottom margin is the negative value of the footer's height */
+}
+
+        
+.sticky-footer {
+    background-color: $backgroundcolor;
+    width:100%;
+    border-top: 1pt solid $primarycolor;
+    padding: 5px;
+    bottom: 0;
+    position: fixed;
+    z-index: 150;
+    height: 50px;
+}
+
+.column-firstName, .column-surname{
+    width:25%
+}
+
+.column-phoneNumber {
+    width: 50%
+}
+
+.loader {
+    border: 16px solid $tablesecondarycolor;
+    border-top: 16px solid $primarycolor;
+    border-radius: 50%;
+    position:absolute;
+    left: 40%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

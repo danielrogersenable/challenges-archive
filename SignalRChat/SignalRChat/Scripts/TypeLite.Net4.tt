@@ -1,0 +1,18 @@
+﻿<#@ template debug="true" hostspecific="True" language="C#" #>
+<#@ output extension=".d.ts" #>
+<#@ assembly name="$(TargetDir)TypeLite.dll" #>
+<#@ assembly name="$(TargetDir)TypeLite.Net4.dll" #>
+<#@ assembly name="$(TargetDir)SignalRChat.dll" #>
+<#@ assembly name="System.ComponentModel.DataAnnotations" #>
+<#@ import namespace="TypeLite" #>
+<#@ import namespace="TypeLite.TsModels" #>
+<#@ import namespace="TypeLite.Net4" #>
+/* tslint:disable:no-internal-module no-consecutive-blank-lines */
+<# var definitions = TypeScript.Definitions()
+    .For<global::SignalRChat.Models.Api.MessageModel>()
+    .WithConvertor<DateTime>(t => "string")
+    .WithConvertor<TimeSpan>(t => "string")
+    .WithConvertor<DateTimeOffset>(t => "string")
+;
+#>
+<#= definitions.Generate(TsGeneratorOutput.Properties) #>

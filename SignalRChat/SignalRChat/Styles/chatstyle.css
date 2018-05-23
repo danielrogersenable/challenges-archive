@@ -1,0 +1,131 @@
+﻿/*$primarycolor: darken(red,20%);*/
+.topbar {
+  background-color: #4a7535;
+  color: white; }
+  .topbar :focus {
+    outline-color: white; }
+  .topbar a {
+    color: white; }
+    .topbar a:hover {
+      background-color: white;
+      color: #4a7535;
+      outline-color: #4a7535; }
+
+h1 {
+  color: #4a7535;
+  margin-left: 8px; }
+
+h2 {
+  color: #4a7535;
+  font-size: 24px;
+  margin-left: 8px; }
+
+.left-panel {
+  float: left;
+  width: 624px; }
+
+.right-panel {
+  float: right;
+  width: 416px; }
+
+.chatwindow {
+  background-color: #e6e6e6;
+  /*max-height: 50vh;
+    min-height: 256px;*/
+  height: 50vh;
+  overflow: scroll;
+  margin: 16px 0px 16px 8px;
+  width: 624px; }
+  .chatwindow ul {
+    list-style-type: none; }
+
+.chat-header label, .chat-header input[type="text"], .chat-header input[type="number"], .chat-header textarea, .criteria-form label, .criteria-form input[type="text"], .criteria-form input[type="number"], .criteria-form textarea {
+  border: 1px solid #4a7535;
+  margin: 3px;
+  padding: 4px;
+  height: 24px; }
+
+.chat-header label, .criteria-form label {
+  width: 80px;
+  border-color: white; }
+
+.chat-header input[type="text"], .criteria-form input[type="text"] {
+  width: 256px;
+  background-color: white; }
+  .chat-header input[type="text"]:disabled, .criteria-form input[type="text"]:disabled {
+    background-color: #e6e6e6; }
+
+.chat-header .system-messages-label, .criteria-form .system-messages-label {
+  width: auto; }
+
+.chat-header .system-messages-input, .criteria-form .system-messages-input {
+  width: auto; }
+
+.chat-header .content, .criteria-form .content {
+  height: 96px;
+  max-width: 256px; }
+
+.criteria-form {
+  border: 1px solid #4a7535;
+  margin: 8px;
+  width: 100%; }
+  .criteria-form label {
+    width: 240px; }
+  .criteria-form .number-input {
+    width: 64px; }
+  .criteria-form .dropdown-input-number {
+    width: 64px; }
+  .criteria-form .dropdown-input-dropdown {
+    width: 80px;
+    border-color: #4a7535;
+    height: 24px; }
+
+input[type="button"], input[type="submit"] {
+  background-color: #4a7535;
+  color: white;
+  border: 1px solid #4a7535;
+  border-radius: 16px;
+  width: 192px;
+  height: 24px;
+  margin: 11px; }
+  input[type="button"]:hover, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+    background-color: white;
+    color: #4a7535;
+    border-color: #4a7535; }
+  input[type="button"]:disabled, input[type="submit"]:disabled {
+    background-color: #345225;
+    color: #e6e6e6;
+    border-color: #345225; }
+
+input[type="checkbox"] {
+  margin: 11px; }
+
+input[type="submit"].wide-button {
+  width: 384px; }
+
+.loader {
+  border: 16px solid #e6e6e6;
+  border-top: 16px solid #4a7535;
+  border-radius: 50%;
+  position: relative;
+  left: 252px;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s ease-in-out infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+

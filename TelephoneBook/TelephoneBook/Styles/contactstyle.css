@@ -1,0 +1,161 @@
+﻿/*$primarycolor: darken(red,20%);*/
+:focus {
+  outline-color: #4a7535; }
+
+body {
+  color: black;
+  background-color: white; }
+
+.topbar {
+  background-color: #4a7535;
+  color: white; }
+  .topbar :focus {
+    outline-color: white; }
+  .topbar a {
+    color: white; }
+    .topbar a:hover {
+      background-color: white;
+      color: #4a7535;
+      outline-color: #4a7535; }
+
+h1 {
+  color: #4a7535; }
+
+.contactstable {
+  width: 100%;
+  margin-bottom: 20px; }
+  .contactstable th {
+    margin-bottom: 15px;
+    border-bottom: 1px solid black; }
+  .contactstable td {
+    height: 25px;
+    padding-bottom: 3px;
+    padding-top: 3px; }
+  .contactstable tr:nth-child(even) {
+    background-color: #f2f2f2; }
+  .contactstable tr:nth-child(odd) {
+    background-color: white; }
+  .contactstable tr:hover td {
+    background-color: #4a7535;
+    color: white; }
+
+.buttonenvironment {
+  padding-top: 15px;
+  padding-bottom: 30px; }
+
+.contactsform > input {
+  float: left;
+  width: 250px;
+  margin: 2px;
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 20px; }
+  .contactsform > input:focus {
+    outline-color: #4a7535; }
+
+.contactsform > div {
+  margin-bottom: 5px;
+  margin-top: 5px; }
+
+.searchform {
+  padding-top: 10px; }
+  .searchform > input {
+    width: 300px;
+    margin: 2px;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 20px; }
+    .searchform > input:focus {
+      outline-color: #4a7535; }
+  .searchform > div {
+    margin-bottom: 5px;
+    margin-top: 5px; }
+
+.contactsdataentry {
+  background-color: white;
+  color: black; }
+  .contactsdataentry::-webkit-input-placeholder {
+    color: black; }
+
+input[type=button], input[type=submit], .buttonstyle, .navbutton {
+  text-align: center;
+  background-color: #4a7535;
+  border: 1px solid white;
+  padding: 1px 6px;
+  color: white;
+  /*min-width: 200px;*/
+  border-radius: 14px;
+  margin-left: 5px; }
+  input[type=button]:focus, input[type=button]:hover, input[type=submit]:focus, input[type=submit]:hover, .buttonstyle:focus, .buttonstyle:hover, .navbutton:focus, .navbutton:hover {
+    background-color: white;
+    color: #4a7535;
+    text-decoration: none;
+    border: 1px solid #4a7535;
+    outline-color: #4a7535; }
+  input[type=button]:disabled, input[type=submit]:disabled, .buttonstyle:disabled, .navbutton:disabled {
+    background-color: #345225;
+    color: white;
+    border: 1px solid white; }
+
+.buttonstyle {
+  float: left;
+  min-width: 200px; }
+
+.contactslabel {
+  /*float: left;*/
+  width: 150px; }
+
+.table-navigation > input {
+  width: 50px;
+  margin: 2px;
+  border-width: 1px;
+  border-style: solid;
+  margin-bottom: 20px; }
+  .table-navigation > input:focus {
+    outline-color: #4a7535; }
+
+.navigation-buttons {
+  padding-bottom: 5px; }
+
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto 50px;
+  /* the bottom margin is the negative value of the footer's height */ }
+
+.sticky-footer {
+  background-color: white;
+  width: 100%;
+  border-top: 1pt solid #4a7535;
+  padding: 5px;
+  bottom: 0;
+  position: fixed;
+  z-index: 150;
+  height: 50px; }
+
+.column-firstName, .column-surname {
+  width: 25%; }
+
+.column-phoneNumber {
+  width: 50%; }
+
+.loader {
+  border: 16px solid #f2f2f2;
+  border-top: 16px solid #4a7535;
+  border-radius: 50%;
+  position: absolute;
+  left: 40%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s ease-in-out infinite; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+

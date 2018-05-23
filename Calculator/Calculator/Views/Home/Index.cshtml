@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+@*To do:
+    [X] Try and sort animations for the tutorial to fade in and out (probably using knockout, SASS seems too convoluted).
+    [X] Find a way of dealing with inputs like '-1 + 1' or '1 + - 1'.
+    [X] Add support for ^,
+    [ ]      and perhaps some other simple functions.
+    [X] Set default focus to be on input box.
+    [ ] Produce as many esoteric edge cases as possible.
+*@
+
+
+<h1>
+    Calculator
+</h1>
+<section>
+    <p class="calculator-text">
+        Enter your calculation in the box below. Clicking 'Calculate' will produce your result underneath.
+    </p>
+</section>
+
+<section data-bind="with: calculator" class="calculator">
+    <form>
+        <label class="calculator-text">
+            Calculator input:
+            <input data-bind="value: calcInput" autofocus />
+        </label>
+        <input type="submit" value="Calculate" data-bind="click: calculate" />
+    </form>
+    <!-- ko if: isCalculating -->
+    <p>
+        Calculating...
+    </p>
+    <!-- /ko-->
+    <!-- ko if: hasCalculated-->
+    <p class="calculator-text calculator-success" data-bind="visible: isValid()">
+        Result: <span data-bind="text: calcOutput"></span>
+    </p>
+    <p class="calculator-text calculator-failure" data-bind="visible: !isValid()">
+        Error: <span data-bind="text: calcError"></span>
+    </p>
+    <!-- /ko -->
+</section>
+
+<section class="calculator">
+    <form>
+        <input type="submit" value="Display operations and functions" data-bind="click: showTutorial" />
+    </form>
+
+
+    <article class="tutorial">
+        <div data-bind="slideIn: tutorialVisible()" class="tutorial-content">
+            <p>
+                Permitted operations are:
+            </p>
+            <ul>
+                <li> Addition (+)</li>
+                <li> Subtraction (-)</li>
+                <li> Multiplication (*)</li>
+                <li> Division (/)</li>
+                <li> Exponentiation (^)</li>
+            </ul>
+            <p>
+                Permitted functions are:
+            </p>
+            <ul>
+                <li> sin </li>
+                <li> cos </li>
+                <li> tan </li>
+                <li> e </li>
+            </ul>
+            <p>
+                The command pi will produce an approximation to pi, which can be manipulated as an ordinary number.
+            </p>
+        </div>
+    </article>
+</section>
+
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/App/ParsedEquation.js")
+    @Scripts.Render("~/Scripts/App/App.js")
+}

@@ -1,0 +1,211 @@
+﻿$enablegreen: #79B55B;
+$enableyellow: #EEE21E;
+$primarycolor: darken($enablegreen,20%); // Acccessibility issues with contrast
+/*$primarycolor: darken(red,20%);*/
+$secondarycolor: white;
+$fontcolor: black;
+$headingcolor: $primarycolor;
+$backgroundcolor: $secondarycolor;
+$tableprimarycolor: $backgroundcolor;
+$tablesecondarycolor: darken($tableprimarycolor, 10%);
+$chatbackgroundcolor: $tablesecondarycolor;
+
+$inputwidth: 256px;
+$buttonwidth: 192px;
+$toplabelwidth: 80px;
+$criterialabelwidth: 240px;
+$dropdownwidth: 128px;
+$inputheight: 24px;
+$numberwidth: 64px;
+$dropdownwidth: 80px;
+$wideinputwidth: 384px;
+
+$borderwidth: 1px;
+$marginwidth: 3px;
+$paddingwidth: 4px;
+$totalwidth: $marginwidth + $paddingwidth + $borderwidth;
+
+$pagewidth: 1040px;
+$rightwidth: 416px;
+$leftwidth: $pagewidth - $rightwidth;
+
+.topbar {
+    background-color: $primarycolor;
+    color: $secondarycolor;
+
+    :focus {
+        outline-color: $secondarycolor;
+    }
+
+    a {
+        color: $secondarycolor;
+
+        &:hover {
+            background-color: $secondarycolor;
+            color: $primarycolor;
+            outline-color: $primarycolor;
+        }
+    }
+}
+
+h1 {
+    color: $primarycolor;
+    margin-left: $totalwidth;
+}
+
+h2 {
+    color: $primarycolor;
+    font-size: 24px;
+    margin-left: $totalwidth;
+}
+
+.left-panel{
+    float:left;
+    width: $leftwidth;
+}
+
+.right-panel {
+    float: right;
+    width: $rightwidth;
+}
+
+
+.chatwindow {
+    background-color: $chatbackgroundcolor;
+    /*max-height: 50vh;
+    min-height: 256px;*/
+    height: 50vh;
+    overflow: scroll;
+    margin: 16px 0px 16px $totalwidth;
+    width: $leftwidth;
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+
+
+.chat-header, .criteria-form {
+    label, input[type="text"], input[type="number"], textarea {
+        border: $borderwidth solid $primarycolor;
+        margin: $marginwidth;
+        padding: $paddingwidth;
+        height: $inputheight;
+    }
+
+    label {
+        width: $toplabelwidth;
+        border-color: $backgroundcolor;
+    }
+
+    input[type="text"]{
+        width: $inputwidth;
+        background-color: $tableprimarycolor;
+
+        &:disabled {
+            background-color: $tablesecondarycolor;
+        }
+    }
+
+    .system-messages-label {
+        width: auto;
+    }
+
+    .system-messages-input {
+        width: auto;
+    }
+
+    .content{
+        height: 4*$inputheight;
+        max-width: $inputwidth;
+    }
+}
+
+.criteria-form {
+    border: 1px solid $primarycolor;
+    margin: $totalwidth;
+    width: 100%;
+
+    label {
+        width: $criterialabelwidth;
+    }
+
+    .number-input {
+        width: $numberwidth;
+    }
+
+    .dropdown-input-number {
+        width: $numberwidth;
+    }
+
+
+    .dropdown-input-dropdown {
+        width: $dropdownwidth;
+        border-color: $primarycolor;
+        height: $inputheight;
+    }
+}
+
+
+input[type="button"], input[type="submit"] {
+    background-color: $primarycolor;
+    color: $secondarycolor;
+    border: $borderwidth solid $primarycolor;
+    border-radius: 16px;
+    width: $buttonwidth;
+    height: $inputheight;
+    margin: $marginwidth + $totalwidth;
+
+    &:hover, &:focus {
+        background-color: $secondarycolor;
+        color: $primarycolor;
+        border-color: $primarycolor;
+    }
+
+    &:disabled {
+        background-color: darken($primarycolor, 10%);
+        color: darken($secondarycolor, 10%);
+        border-color: darken($primarycolor, 10%);
+    }
+}
+
+input[type="checkbox"] {
+    margin: $marginwidth + $totalwidth;
+}
+
+input[type="submit"].wide-button {
+    width: $wideinputwidth;
+}
+
+.loader {
+    border: 16px solid $tablesecondarycolor;
+    border-top: 16px solid $primarycolor;
+    border-radius: 50%;
+    position: relative;
+    left: $leftwidth/2 - 60px;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}

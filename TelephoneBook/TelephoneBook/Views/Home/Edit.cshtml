@@ -1,0 +1,36 @@
+﻿@model TelephoneBook.Models.Contact
+
+<script>
+    var contactId = '@(ViewBag.contactId)';
+</script>
+
+<h1 data-bind="text: pageTitle()"></h1>
+
+<form class="contactsform">
+    <div data-bind="with: contact">
+        @Html.LabelFor(o => o.FirstName, htmlAttributes: new { @class = "contactslabel", @for="firstName" })
+        <input id="firstName" class="contactsdataentry" autofocus maxlength="20" data-bind="value: firstName" />
+    </div>
+    <div data-bind="with: contact">
+        @Html.LabelFor(o => o.Surname, htmlAttributes: new { @class = "contactslabel", @for="surname" })
+        <input id="surname" class="contactsdataentry" maxlength="20" data-bind="value: surname" />
+    </div>
+    <div data-bind="with: contact">
+        @Html.LabelFor(o => o.PhoneNumber, htmlAttributes: new { @class = "contactslabel", @for="phoneNumber" })
+        <input id="phoneNumber" class="contactsdataentry" maxlength="20" data-bind="value: phoneNumber" />
+    </div>
+    <div class="buttonenvironment">
+        <!-- ko if: isEditing-->
+        @*Remove this from the html if we are not editing, so that pressing enter uses the correct submit button*@
+        <input type="submit" value="Save contact" data-bind="click: saveContact, visible: isEditing" />
+        <!-- /ko -->
+        <input type="submit" value="Add contact" data-bind="click: addContact, visible: !isEditing()" />
+        <input type="submit" value="Delete contact" data-bind="click: deleteContact, visible: isEditing " />
+        <input type="submit" value="Return to contacts without saving" data-bind="click: returnContact" />
+    </div>
+</form>
+
+
+@section Scripts{
+    @Scripts.Render("/Scripts/App/Home/Edit.js")
+}
